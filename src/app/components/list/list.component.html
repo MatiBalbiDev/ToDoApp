@@ -1,8 +1,14 @@
 <header class="title">
-  <h1>Todo</h1>
+  <h1>ToDo</h1>
 </header>
 <main>
   <section class="searcher">
-    <input class="searcher__text" type="text" />
+    <input
+      class="searcher__text"
+      type="text"
+      [(ngModel)]="item"
+      (keyup.enter)="guardarValor(item)"
+    />
   </section>
+  <app-task [listaDeItems]="listaDeItems"></app-task>
 </main>

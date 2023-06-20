@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-list',
@@ -7,4 +7,22 @@ import { Component } from '@angular/core';
 })
 export class ListComponent {
 
+  @Input()
+  item: string = "";
+
+  public listaDeItems: string[] = [];  
+  
+  constructor() {}
+
+  ngOnInit(): void {
+  }
+
+  guardarValor(item: string) : void {
+    this.listaDeItems.push(item);
+    this.limpiarValor();
+  }
+
+  limpiarValor(): void {
+    this.item = '';
+  }
 }
