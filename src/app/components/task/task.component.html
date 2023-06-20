@@ -1,7 +1,8 @@
 <section class="results">
   <ul>
     <li class="results__item" *ngFor="let item of listaDeItems">
-      {{ item }}
+      {{ item.description }}
+      <button type="button" (click)="quitarItem(item.id)">Eliminar</button>
     </li>
   </ul>
 </section>

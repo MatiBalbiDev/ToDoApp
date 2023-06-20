@@ -6,9 +6,12 @@
     <input
       class="searcher__text"
       type="text"
-      [(ngModel)]="item"
-      (keyup.enter)="guardarValor(item)"
+      [(ngModel)]="valorIngresado"
+      (keyup.enter)="guardarValor()"
     />
   </section>
-  <app-task [listaDeItems]="listaDeItems"></app-task>
+  <app-task
+    [listaDeItems]="listaDeItems"
+    (listaDeItemsModificada)="actualizarLista($event)"
+  ></app-task>
 </main>
