@@ -1,0 +1,33 @@
+.results {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 600px;
+  padding: 0;
+}
+
+.results__item {
+  border: 3px solid #1f8fbb;
+  border-radius: 10px;
+  width: 100%;
+  padding-left: 32px;
+  margin-bottom: 15px;
+  word-wrap: break-word;
+  word-break: break-word;
+  font-size: 3.1rem;
+  color: #57cc99;
+  font-family: "Itim", cursive;
+  font-weight: 600;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
