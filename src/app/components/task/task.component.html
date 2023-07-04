@@ -1,8 +1,19 @@
 <section class="results">
   <ul>
+    <!-- FIX EDITAR ITEM -->
     <li class="results__item" *ngFor="let item of listaDeItems">
       {{ item.description }}
       <button type="button" (click)="quitarItem(item.id)">Eliminar</button>
+      <button type="button" (click)="editarItem(item)">Editar</button>
+      <div *ngIf="itemSeleccionado?.id == item.id">
+        <input
+          type="text"
+          [(ngModel)]="itemSeleccionado!.description"
+          (blur)="cancelarEditar()"
+          (keyup.enter)="guardarCambiosItem()"
+        />
+        <button (click)="cancelarEditar()">Cancelar</button>
+      </div>
     </li>
   </ul>
 </section>
