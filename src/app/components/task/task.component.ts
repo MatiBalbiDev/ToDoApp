@@ -19,6 +19,8 @@ export class TaskComponent {
 
   realizadas: Item[] = [];
 
+  modoEdicion: boolean = false;
+
   ngOnInit(): void {
     this.total = this.listaDeItems;
   }
@@ -34,16 +36,21 @@ export class TaskComponent {
 
   editarItem(item: Item): void {
     if (item != null) {
+      this.modoEdicion = true;
       this.itemSeleccionado = item;
+    } else {
+      this.modoEdicion = false;
     }
   }
 
   guardarCambiosItem(): void {
     this.itemSeleccionado = null;
+    this.modoEdicion = false;
   }
 
   cancelarEditar(): void {
     this.itemSeleccionado = null;
+    this.modoEdicion = false;
   }
 
   marcarRealizado(item: Item): void {
