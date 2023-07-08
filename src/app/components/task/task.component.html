@@ -1,20 +1,28 @@
 <section class="results">
+  <div class="results-info">
+    <p>Total tareas: {{ total.length }}</p>
+    <p>Tareas realizadas: {{ realizadas.length }}</p>
+  </div>
+
   <ul>
-    <!-- FIX EDITAR ITEM -->
     <li class="results__item" *ngFor="let item of listaDeItems">
-      <span>{{ item.description }}</span>
+      <span
+        [class.item-realizado]="item.checked"
+        (click)="marcarRealizado(item)"
+        >{{ item.description }}</span
+      >
       <div class="boton_acciones">
         <button type="button" (click)="quitarItem(item.id)">Eliminar</button>
         <button type="button" (click)="editarItem(item)">Editar</button>
-      </div>
-      <div class="modoEdicion" *ngIf="itemSeleccionado?.id == item.id">
-        <input
-          type="text"
-          [(ngModel)]="itemSeleccionado!.description"
-          (blur)="cancelarEditar()"
-          (keyup.enter)="guardarCambiosItem()"
-        />
-        <button (click)="cancelarEditar()">Cancelar</button>
+        <div class="modoEdicion" *ngIf="itemSeleccionado?.id == item.id">
+          <input
+            type="text"
+            [(ngModel)]="itemSeleccionado!.description"
+            (blur)="cancelarEditar()"
+            (keyup.enter)="guardarCambiosItem()"
+          />
+          <button (click)="cancelarEditar()">Cancelar</button>
+        </div>
       </div>
     </li>
   </ul>
