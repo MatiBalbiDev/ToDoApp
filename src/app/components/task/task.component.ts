@@ -15,20 +15,26 @@ export class TaskComponent {
 
   itemSeleccionado: Item | null = null;
 
+  total: Item[] = [];
+
+  realizadas: Item[] = [];
+
   ngOnInit(): void {
-    console.log(this.listaDeItems);
+    this.total = this.listaDeItems;
   }
 
   quitarItem(id: number): void {
     this.listaDeItems = this.listaDeItems.filter((item) => item.id !== id);
     this.listaDeItemsModificada.emit(this.listaDeItems);
-    console.log(this.listaDeItems);
+    if (this.realizadas.length) {
+      this.realizadas = this.realizadas.filter((item) => item.id !== id);
+    }
+    this.total = this.listaDeItems;
   }
 
   editarItem(item: Item): void {
     if (item != null) {
       this.itemSeleccionado = item;
-      console.log(this.itemSeleccionado);
     }
   }
 
@@ -38,5 +44,14 @@ export class TaskComponent {
 
   cancelarEditar(): void {
     this.itemSeleccionado = null;
+  }
+
+  marcarRealizado(item: Item): void {
+    item.checked = !item.checked;
+    if (item.checked) {
+      this.realizadas.push(item);
+    } else {
+      this.realizadas = this.realizadas.filter((item) => item.checked);
+    }
   }
 }
