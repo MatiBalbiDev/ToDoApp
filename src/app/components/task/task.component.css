@@ -1,8 +1,50 @@
 .results {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 32px;
+  gap: 20px;
+}
+
+.boton_acciones {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.results-info {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  gap: 3px;
+  font-size: 1.3rem;
+  margin: 10px 0;
+}
+
+.item-realizado {
+  background-color: #0a4a63;
+  color: #5dc74f;
+}
+
+.results__item {
+  /* border: 3px solid #1f8fbb; */
+
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 15px;
+  word-wrap: break-word;
+  word-break: break-word;
+  font-size: 3.1rem;
+  color: #57cc99;
+
+  font-weight: 600;
 }
 
 ul {
@@ -17,26 +59,9 @@ span {
   border: 3px solid #1f8fbb;
   width: 500px;
   border-radius: 10px;
-}
-
-.results__item {
-  /* border: 3px solid #1f8fbb; */
-
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   padding-left: 32px;
-  margin-bottom: 15px;
-  word-wrap: break-word;
-  word-break: break-word;
-  font-size: 3.1rem;
-  color: #57cc99;
-
-  font-weight: 600;
 }
-/* CSS */
+
 button {
   margin: 10px;
   padding: 15px 30px;
@@ -44,7 +69,7 @@ button {
   text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;
-  color: white;
+  color: rgb(200, 252, 223);
   border-radius: 10px;
   display: block;
   border: 0px;
@@ -52,8 +77,8 @@ button {
   background-image: linear-gradient(
     45deg,
     #3b944e 0%,
-    #40ac71 51%,
-    #013f15 100%
+    #156137 51%,
+    #083a18 100%
   );
   cursor: pointer;
   user-select: none;
@@ -61,19 +86,12 @@ button {
   touch-action: manipulation;
 }
 
-.button:hover {
+button:hover {
   background-position: right center;
-  /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
 }
 
-.button:active {
+button:active {
   transform: scale(0.95);
-}
-
-.boton_acciones {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
