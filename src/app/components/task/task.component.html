@@ -12,9 +12,65 @@
         >{{ item.description }}</span
       >
       <div class="boton_acciones">
-        <button type="button" (click)="quitarItem(item.id)">Eliminar</button>
-        <button type="button" (click)="editarItem(item)">Editar</button>
-        <div class="modoEdicion" *ngIf="itemSeleccionado?.id == item.id">
+        <i *ngIf="!modoEdicion"
+          ><svg
+            (click)="quitarItem(item.id)"
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-eraser"
+            width="48"
+            height="48"
+            viewBox="0 0 24 24"
+            stroke-width="1"
+            stroke="#5dc74f"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M19 20h-10.5l-4.21 -4.3a1 1 0 0 1 0 -1.41l10 -10a1 1 0 0 1 1.41 0l5 5a1 1 0 0 1 0 1.41l-9.2 9.3"
+            />
+            <path d="M18 13.3l-6.3 -6.3" /></svg
+        ></i>
+        <i *ngIf="!modoEdicion"
+          ><svg
+            (click)="editarItem(item)"
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-pencil"
+            width="48"
+            height="48"
+            viewBox="0 0 24 24"
+            stroke-width="1"
+            stroke="#5dc74f"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" />
+            <path d="M13.5 6.5l4 4" /></svg
+        ></i>
+        <i *ngIf="!modoEdicion">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-check"
+            width="48"
+            height="48"
+            viewBox="0 0 24 24"
+            stroke-width="1"
+            stroke="#5dc74f"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M5 12l5 5l10 -10" />
+          </svg>
+        </i>
+        <div
+          class="modoEdicion"
+          *ngIf="itemSeleccionado?.id == item.id && modoEdicion"
+        >
           <input
             type="text"
             [(ngModel)]="itemSeleccionado!.description"
