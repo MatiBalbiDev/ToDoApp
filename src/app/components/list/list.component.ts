@@ -23,14 +23,17 @@ export class ListComponent {
   ngOnInit(): void {}
 
   guardarValor(): void {
-    if (this.valorIngresado.length)
+    if (this.valorIngresado.length) {
       this.item = {
         id: this.listaDeItems.length + 1,
         description: this.valorIngresado,
         checked: false,
       };
-    this.listaDeItems.push(this.item);
-    this.limpiarValor();
+      this.limpiarValor();
+      this.listaDeItems.push(this.item);
+    } else {
+      return;
+    }
   }
 
   limpiarValor(): void {
