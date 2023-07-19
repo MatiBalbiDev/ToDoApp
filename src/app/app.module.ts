@@ -6,19 +6,12 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './components/list/list.component';
 import { TaskComponent } from './components/task/task.component';
 import { FormsModule } from '@angular/forms';
+import { SessionStorageService } from './services/local-storage.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ListComponent,
-    TaskComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [AppComponent, ListComponent, TaskComponent],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  providers: [SessionStorageService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
