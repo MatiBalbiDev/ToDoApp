@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { SessionStorageService } from './local-storage.service';
 
-describe('LocalStorageService', () => {
+describe('SessionStorageService', () => {
   let service: SessionStorageService;
 
   beforeEach(() => {
