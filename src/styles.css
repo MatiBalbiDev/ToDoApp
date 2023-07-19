@@ -3,17 +3,26 @@
   padding: 0;
   margin: 0;
   font-family: "Itim", cursive;
+  background-size: 100% 100%;
 }
 
 body {
-  min-height: 100vh;
-  background-image: linear-gradient(
-    to right top,
-    #009193,
-    #007c8b,
-    #00687f,
-    #04536f,
-    #15405c
-  );
-  /* background-size: 100% 100%; */
+  background-color: #00687f;
+  background-size: cover;
+}
+
+@media (min-width: 320px) {
+  app-root {
+    background-image: linear-gradient(
+      to bottom right,
+      #009193,
+      #007c8b,
+      #00687f,
+      #04536f,
+      #15405c
+    );
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+  }
 }
